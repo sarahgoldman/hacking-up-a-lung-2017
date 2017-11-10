@@ -33,7 +33,7 @@ class GreetingController {
     
     @RequestMapping("/")
     String home() {
-        return "Hello World!";
+        return "index";
     }
 	
 	@RequestMapping("/test")
