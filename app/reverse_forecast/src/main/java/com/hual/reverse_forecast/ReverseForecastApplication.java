@@ -7,11 +7,11 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
-@SpringBootApplication
+@RestController
+@SpringBootConfiguration
 public class ReverseForecastApplication {
 
     @RequestMapping("/")
-    @ResponseBody
     String home() {
         return "Hello World!";
     }
