@@ -17,8 +17,16 @@ public class ReverseForecastApplication extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(ReverseForecastApplication.class);
     }
-	
-	
+
+
+	public static void main(String[] args) {
+		SpringApplication.run(ReverseForecastApplication.class, args);
+	}
+}
+
+@RestController
+class GreetingController {
+    
     @RequestMapping("/")
     String home() {
         return "Hello World!";
@@ -28,9 +36,4 @@ public class ReverseForecastApplication extends SpringBootServletInitializer {
     String test() {
         return "test!";
     }
-
-
-	public static void main(String[] args) {
-		SpringApplication.run(ReverseForecastApplication.class, args);
-	}
 }
