@@ -10,20 +10,17 @@ import org.springframework.context.annotation.*;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
-
-@Configuration
-@ComponentScan
-@EnableAutoConfiguration
-@SpringBootConfiguration
-public class ReverseForecastApplication extends SpringBootServletInitializer {
-
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(ReverseForecastApplication.class);
+@Controller
+public class forecastController {
+    
+    @RequestMapping("/")
+    String home() {
+        return "index";
     }
-
-
-	public static void main(String[] args) {
-		SpringApplication.run(ReverseForecastApplication.class, args);
-	}
+	
+	@RequestMapping("/test")
+    String test() {
+        return "test!";
+    }
 }
+
