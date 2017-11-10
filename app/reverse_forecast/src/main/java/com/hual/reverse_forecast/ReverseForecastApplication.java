@@ -23,6 +23,11 @@ public class ReverseForecastApplication extends SpringBootServletInitializer {
     String home() {
         return "Hello World!";
     }
+	
+	@RequestMapping("/test")
+    String test() {
+        return "test!";
+    }
 
 
 	public static void main(String[] args) {
