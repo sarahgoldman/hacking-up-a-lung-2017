@@ -1,0 +1,6 @@
+{
+  "npmName":"weether-client-api",
+  "npmVersion":"1.0.0",
+  "supportsES6":"true",
+  "ngVersion":"^5.0.0"
+}
