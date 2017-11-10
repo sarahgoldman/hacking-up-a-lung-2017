@@ -6,11 +6,19 @@ import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @RestController
 @SpringBootConfiguration
-public class ReverseForecastApplication {
+public class ReverseForecastApplication extends SpringBootServletInitializer {
 
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(ReverseForecastApplication.class);
+    }
+	
+	
     @RequestMapping("/")
     String home() {
         return "Hello World!";
