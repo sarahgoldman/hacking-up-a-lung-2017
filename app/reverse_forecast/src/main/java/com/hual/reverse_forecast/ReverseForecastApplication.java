@@ -6,10 +6,14 @@ import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.context.annotation.*;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
-@RestController
+
+@Configuration
+@ComponentScan
+@EnableAutoConfiguration
 @SpringBootConfiguration
 public class ReverseForecastApplication extends SpringBootServletInitializer {
 
