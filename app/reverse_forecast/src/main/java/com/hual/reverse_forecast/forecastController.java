@@ -10,17 +10,22 @@ import org.springframework.context.annotation.*;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
+import org.springframework.http.*;
+
+import com.hual.reverse_forecast.*;
+import java.util.*;
+
 @Controller
 public class forecastController {
     
     @RequestMapping("/")
-    String home() {
+    public String home() {
         return "index";
     }
 	
-	@RequestMapping("/test")
-    String test() {
-        return "test!";
+	@RequestMapping(path="/conditions", method = RequestMethod.GET)
+    public ResponseEntity<List<RefData>> test() {
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
 
