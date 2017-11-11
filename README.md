@@ -4,27 +4,16 @@
 `/app`
 
 ## API Configuration
-`/api`
-
-### Generating SDKs
-
-To generate the client api sdks:
-```
-swagger-codegen generate -i api/api.yaml -l typescript-angular -c api/client_config.json -o api/client/
-```
-
-To generate the client api sdks:
-```
-swagger-codegen generate -i api/api.yaml -l java -c api/server_config.json -o api/server/
-```
-
+API endpoints defined in `/api/api.yaml`
 
 ## Public App
-`/public`
+`/ng`
+
+Public app is hosted on GitHub Pages here: [hacking-up-a-lung-2017](https://sarahgoldman.github.io/hacking-up-a-lung-2017/)
 
 ## Other Assets
 `/assets`
 
 ### Presentation
 
-### Wireframes
+### Design Comps
