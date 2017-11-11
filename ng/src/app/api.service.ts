@@ -9,6 +9,7 @@ import { LocationService, Location } from './location.service';
 export interface RefData {
   id?: number;
   name?: string;
+  code?: string;
 }
 
 export interface Place {
@@ -35,13 +36,13 @@ export class ApiService {
     return this.locationService.getCurrentUserLocation().mergeMap(loc => {
       console.log('user location:');
       console.log(loc);
-      // return this.http.get<Place[]>(this.API_URL + 'places?condition='+weatherId+'&lat='+loc.lat+'&lon='+loc.lon);
-      return Observable.of([
-        { id: '01', name: 'Arlington', country: 'US', coord: { lon: -122.43, lat: 37.76 } },
-        { id: '01', name: 'New York', country: 'US', coord: { lon: -80.43, lat: 37.76 } },
-        { id: '01', name: 'Baltimore', country: 'US', coord: { lon: -42.43, lat: 37.76 } },
-        { id: '01', name: 'Chicago', country: 'US', coord: { lon: 22.43, lat: 37.76 } }
-      ]);
+      return this.http.get<Place[]>(this.API_URL + 'places?condition='+weatherId+'&lat='+loc.lat+'&lon='+loc.lon);
+      // return Observable.of([
+      //   { id: '01', name: 'Arlington', country: 'US', coord: { lon: -122.43, lat: 37.76 } },
+      //   { id: '01', name: 'New York', country: 'US', coord: { lon: -80.43, lat: 37.76 } },
+      //   { id: '01', name: 'Baltimore', country: 'US', coord: { lon: -42.43, lat: 37.76 } },
+      //   { id: '01', name: 'Chicago', country: 'US', coord: { lon: 22.43, lat: 37.76 } }
+      // ]);
     });
   }
 
