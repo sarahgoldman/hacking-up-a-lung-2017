@@ -1,0 +1,9 @@
+
+<h1>What type of weather condition are you looking for?</h1>
+<h2>Find the nearest places to you with the weather you are looking for.</h2>
+
+<ul>
+  <li *ngFor="let option of weatherOptions">
+    <button (click)="findPlaces(option.id)">{{option.name}}</button>
+  </li>
+</ul>
