@@ -161,6 +161,7 @@ public class forecastController {
 					
 						//find temp
 						String longTemp = s.split("temp\":")[1];
+						System.out.println(s);
 						int temp_end = longTemp.indexOf(',');
 						double temp = Double.parseDouble(longTemp.substring(0,temp_end));
 						String temp_str = ""+temp;
