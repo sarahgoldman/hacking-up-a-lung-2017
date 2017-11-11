@@ -25,7 +25,10 @@ public class forecastController {
 	
 	@RequestMapping(path="/conditions", method = RequestMethod.GET)
     public ResponseEntity<List<RefData>> test() {
-        return new ResponseEntity<>(HttpStatus.OK);
+		RefData a = new RefData(1,"Thunderstorm");
+		
+		
+        return new ResponseEntity<>(Arrays.asList(a),HttpStatus.OK);
     }
 }
 
