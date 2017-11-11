@@ -1,16 +1,28 @@
+<div class="container">
+  <h1>What type of weather condition are you looking for?</h1>
+  <h2>Find the nearest places to you with the weather you are looking for.</h2>
 
-<h1>What type of weather condition are you looking for?</h1>
-<h2>Find the nearest places to you with the weather you are looking for.</h2>
-
-<ul class="condition-options">
-  <li *ngFor="let option of weatherOptions">
-    <button (click)="findPlacesWithWeather(option.id)">{{option.name}}</button>
-  </li>
-</ul>
-
-<ul class="place-results" *ngIf="!loading">
-  <li *ngFor="let place of places; let i = index">
-    {{place | json}}
-    <img src="{{place.imgSrc}}&size=640x400"/>
-  </li>
-</ul>
+  <ul class="condition-options">
+    <li *ngFor="let option of weatherOptions">
+      <button (click)="findPlacesWithWeather(option)">{{option.name}}</button>
+    </li>
+  </ul>
+</div>
+<div *ngIf="!loading && condition" class="place-results">
+  <div class="container">
+    <h1>There are <span class="highlight">{{places.length}}</span> locations near you with <span class="highlight">{{condition}}</span> conditions.</h1>
+    <div class="clearfix row">
+      <div class="col-sm-12 col-md-6" *ngFor="let place of places; let i = index">
+        <div class="place-card">
+          <img src="{{place.imgSrc}}&size=350x125"/>
+          <div class="place-content">
+            <p>{{place.name}}<ng-container *ngIf="place.country">, {{place.country}}</ng-container></p>
+            <p>{{place.temp}}&deg; | {{place.condition}}</p>
+            <p>{{place.coord | coordinates}}</p>
+            <p><a href="https://www.google.com/maps/search/?api=1&query={{place.coord.lat}},{{place.coord.lon}}" target="_blank">View Map</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

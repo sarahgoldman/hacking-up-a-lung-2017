@@ -33,3 +33,29 @@ ul.condition-options button {
   background: none;
   margin: 5px;
 }
+
+.place-results {
+  background: #f1f1f1;
+  padding: 1em 0;
+}
+.highlight {
+  color: #318341;
+}
+
+.place-results .place-card {
+  border: 1px solid #318341;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  margin: .5em 0;
+}
+
+.place-results img {
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.place-content {
+  padding: 20px;
+}
