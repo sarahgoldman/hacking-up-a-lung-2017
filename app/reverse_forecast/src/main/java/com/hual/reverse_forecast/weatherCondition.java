@@ -1,18 +1,17 @@
 package com.hual.reverse_forecast;
 
 public enum weatherCondition {
-	THUNDER(1,"Thunderstorm"),
-	DRIZZLE(2,"Drizzle"),
-	RAIN(3,"Rain"),
-	RAIN_SNOW(4,"Rain/Snow"),
-	SNOW(5,"Snow"),
-	HAZY(6,"Hazy"),
-	CLEAR(7,"Clear"),
-	CLOUDY(8,"Partly Cloudy"),
-	OVERCAST(9,"Overcast"),
-	TORNDADO(10,"Tornado"),
-	STORM(11,"Severe Storm"),
-	WINDY(12,"Windy");
+	THUNDER(0,"Thunderstorm"),
+	DRIZZLE(1,"Drizzle"),
+	RAIN(2,"Rain"),
+	SNOW(3,"Snow"),
+	HAZY(4,"Hazy"),
+	CLEAR(5,"Clear"),
+	CLOUDY(6,"Partly Cloudy"),
+	OVERCAST(7,"Overcast"),
+	TORNDADO(8,"Tornado"),
+	STORM(9,"Severe Storm"),
+	WINDY(10,"Windy");
 	
 	final private int id;
 	final private String name;
