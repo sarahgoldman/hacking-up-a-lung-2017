@@ -107,7 +107,7 @@ public class forecastController {
 	
 	@CrossOrigin
 	@RequestMapping(path="/places", method = RequestMethod.GET)
-    public ResponseEntity<List<Place>> searchCircle(@RequestParam(value="option",required=true) final int option, @RequestParam(value="lat",required=true) final double lat, @RequestParam(value="lon",required=true) final double lon ) {
+    public ResponseEntity<List<Place>> searchCircle(@RequestParam(value="condition",required=true) final int option, @RequestParam(value="lat",required=true) final double lat, @RequestParam(value="lon",required=true) final double lon ) {
 		String url = "http://api.openweathermap.org/data/2.5/find?lat="+lat+"&lon="+lon+"&cnt=50";
 		String json = "";
 		BufferedReader rd = getRest(url);
