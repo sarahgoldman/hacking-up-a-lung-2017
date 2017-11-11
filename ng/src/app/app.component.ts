@@ -22,4 +22,10 @@ export class AppComponent implements OnInit {
     });
   }
 
+  findPlacesWithWeather(weatherId: number) {
+    this.apiService.findPlacesWithWeather(weatherId).subscribe(results => {
+      console.log(results);
+    });
+  }
+
 }

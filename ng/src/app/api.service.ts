@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/observable/of';
 
 export interface RefData {
   id?: number;
@@ -17,6 +18,10 @@ export class ApiService {
 
   getWeatherOptions(): Observable<RefData[]> {
     return this.http.get<RefData[]>(this.API_URL + 'conditions');
+  }
+
+  findPlacesWithWeather(weatherId: number): Observable<RefData[]> {
+    return Observable.of([]);
   }
 
 }
