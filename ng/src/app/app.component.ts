@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
-import { ApiService, RefData } from './api.service';
+import { ApiService, RefData, Place } from './api.service';
+import { LocationService } from './location.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,11 @@ import { ApiService, RefData } from './api.service';
 export class AppComponent implements OnInit {
 
   weatherOptions: RefData[] = [];
+  places: Place[] = [];
 
-  constructor(private apiService: ApiService) { }
+  loading: boolean;
+
+  constructor(private apiService: ApiService, private locationService: LocationService) { }
 
   ngOnInit() {
     this.getWeatherOptions();
@@ -23,9 +27,20 @@ export class AppComponent implements OnInit {
   }
 
   findPlacesWithWeather(weatherId: number) {
+    this.loading = true;
+    this.places = [];
     this.apiService.findPlacesWithWeather(weatherId).subscribe(results => {
       console.log(results);
+      this.places = results;
+      this.populateImgSrcs();
+      this.loading = false;
     });
+  }
+
+  populateImgSrcs() {
+    for (let place of this.places) {
+      place.imgSrc = this.locationService.getStaticMapImgSrc(place.coord);
+    }
   }
 
 }
