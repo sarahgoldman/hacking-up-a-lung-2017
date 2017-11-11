@@ -15,7 +15,7 @@ import org.springframework.http.*;
 import com.hual.reverse_forecast.*;
 import java.util.*;
 
-@Controller
+@RestController
 public class forecastController {
     
     @RequestMapping("/")
