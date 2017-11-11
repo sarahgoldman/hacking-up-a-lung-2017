@@ -2,8 +2,15 @@
 <h1>What type of weather condition are you looking for?</h1>
 <h2>Find the nearest places to you with the weather you are looking for.</h2>
 
-<ul>
+<ul class="condition-options">
   <li *ngFor="let option of weatherOptions">
     <button (click)="findPlacesWithWeather(option.id)">{{option.name}}</button>
+  </li>
+</ul>
+
+<ul class="place-results" *ngIf="!loading">
+  <li *ngFor="let place of places; let i = index">
+    {{place | json}}
+    <img src="{{place.imgSrc}}&size=640x400"/>
   </li>
 </ul>
