@@ -18,6 +18,8 @@ export interface Place {
   country: string;
   coord: Location;
   imgSrc?: string;
+  temp?: string;
+  condition?: string;
 }
 
 @Injectable()

@@ -29,7 +29,7 @@ export class LocationService {
 
   getStaticMapImgSrc(position: Location): string {
     let latlon: string = position.lat + "," + position.lon;
-    return 'https://maps.googleapis.com/maps/api/staticmap?center='+latlon+'&zoom=7&sensor=false&key='+this.GOOGLE_MAP_KEY;
+    return 'https://maps.googleapis.com/maps/api/staticmap?center='+latlon+'&zoom=14&sensor=false&key='+this.GOOGLE_MAP_KEY;
   }
 
 }

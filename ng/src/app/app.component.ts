@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
 
   weatherOptions: RefData[] = [];
   places: Place[] = [];
+  condition: string;
 
   loading: boolean;
 
@@ -26,10 +27,11 @@ export class AppComponent implements OnInit {
     });
   }
 
-  findPlacesWithWeather(weatherId: number) {
+  findPlacesWithWeather(condition: RefData) {
     this.loading = true;
     this.places = [];
-    this.apiService.findPlacesWithWeather(weatherId).subscribe(results => {
+    this.condition = condition.name;
+    this.apiService.findPlacesWithWeather(condition.id).subscribe(results => {
       console.log(results);
       this.places = results;
       this.populateImgSrcs();

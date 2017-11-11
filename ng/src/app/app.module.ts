@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 
 import { ApiService } from './api.service';
 import { LocationService } from './location.service';
+import { CoordinatesPipe } from './coordinates.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CoordinatesPipe
   ],
   imports: [
     BrowserModule,
